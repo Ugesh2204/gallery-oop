@@ -9,9 +9,17 @@
         </h1>
 
         <?php
-        if($database->connection) {
-            echo "true";
-        } ?>
+
+        /* Testing One Geting Data from tha database  */
+            $sql = "SELECT * FROM users WHERE id= 1";
+            $result = $database->query($sql);
+            /*We use  mysqli_fetch_array to pull it out and save
+            it in  $user_found */
+            $user_found = mysqli_fetch_array($result);
+
+            echo $user_found['username'];
+       
+        ?>
 
         <ol class="breadcrumb">
             <li>

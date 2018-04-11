@@ -12,30 +12,34 @@ class Database {
     /*step 1 */
     public function open_db_connection() {
 
-        $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+        /*$this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);*/
 
-        if(mysqli_connect_errno()){
-            die ("Database connection failed badly" . mysqli_error());
+        /*the oop way */
+        $this->connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+        /*if this connection is bad we get an error then we gona kill the database*/
+        if($this->connection->connect_errno){
+            die ("Database connection failed badly" . $this->connection->connect_error);
         }
     }
 
     /*query  step 3*/
     public function query($sql) {
-        $result = mysqli_query($this->connection, $sql);
+        $result = $this->connection->query($sql);
+        $this->confirm_query($result);
         return $result;
     }
 
     /*query  step 4*/
     private function confirm_query($result) {
         if(!$result) {
-            die("Query failed");
+            die("Query failed" . $this->connection->connect_error);
         }
     }
 
     /*query  step 5 adding mysqli escapse string*/
     public function escape_string($string) {
-        /*pass two parametters connections and the string */
-        $escaped_string = mysqli_real_escape_string($this->connection,$string);
+       
+        $escaped_string = $this->connection->real_escape_string($string);
         return $escaped_string;
     }
 
