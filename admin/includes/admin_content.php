@@ -10,15 +10,27 @@
 
         <?php
 
-        /* Testing One Geting Data from tha database  */
-            $sql = "SELECT * FROM users WHERE id= 1";
-            $result = $database->query($sql);
-            /*We use  mysqli_fetch_array to pull it out and save
-            it in  $user_found */
-            $user_found = mysqli_fetch_array($result);
+            /*static */
+            //$result_set = User::find_all_users();
+            /*add a loop to get the values in an array */
+            //while($row = mysqli_fetch_array($result_set)){
+             //   echo $row ['username'] . "<br>";
+           // }
+            /*passing parameters form sql id = 2 */
+            //$found_user = User::find_users_by_id(2);
+            //$user =User::instantiation($found_user );
+            //echo $user->username;
+            //echo "<br>";
 
-            echo $user_found['username'];
+            //$users = User::find_all_users();
+            //foreach($users as $user) {
+                //echo $user->id . "<br>";
+            //}
        
+
+            $found_user = User::find_users_by_id(2);
+           echo $found_user->username;
+
         ?>
 
         <ol class="breadcrumb">
