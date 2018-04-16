@@ -1,5 +1,8 @@
 <?php ob_start(); ?>
-<?php include("init.php"); ?>
+<?php require_once("init.php"); ?>
+
+<!-- start our session -->
+
 
 <!DOCTYPE html>
 <html lang="en">

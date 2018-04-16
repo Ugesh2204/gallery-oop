@@ -38,7 +38,6 @@ class Database {
 
     /*query  step 5 adding mysqli escapse string*/
     public function escape_string($string) {
-       
         $escaped_string = $this->connection->real_escape_string($string);
         return $escaped_string;
     }

@@ -35,8 +35,6 @@ class User {
        //} else {
          // return false; 
        //}
-
-        return $found_user;
      }
 
 
@@ -55,6 +53,25 @@ class User {
         return $the_object_array;
     }
 
+
+
+    /*********** Method create for user in login.php see page ***************** */
+    public static function verify_user ($username, $password) {
+        global $database;
+        /*sanatizing the user and password */
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE ";
+        $sql .= "username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
+
+        $the_result_array = self::find_this_query("$sql");
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+
+
+    }
 
     /*step 4 Assigning user value to object automatically */
 
