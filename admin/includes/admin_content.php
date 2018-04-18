@@ -10,15 +10,19 @@
 
         <?php
 
-            $user = new User();
-
-            /*Data suppose to be comming from a form */
+            //$user = new User();
+            /*Data suppose to be comming from a form 
             $user->username = "Suave The second";
             $user->password = "Rico Last Name";
             $user->first_name = "Rico";
             $user->last_name = "Suaves";
 
-            $user->create();
+            $user->create();*/
+
+            $user = User::find_users_by_id(3);
+            $user->last_name = "Williams";
+
+            $user->update();
 
 
         ?>
