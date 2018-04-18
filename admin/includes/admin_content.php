@@ -10,26 +10,16 @@
 
         <?php
 
-            /*static */
-            //$result_set = User::find_all_users();
-            /*add a loop to get the values in an array */
-            //while($row = mysqli_fetch_array($result_set)){
-             //   echo $row ['username'] . "<br>";
-           // }
-            /*passing parameters form sql id = 2 */
-            //$found_user = User::find_users_by_id(2);
-            //$user =User::instantiation($found_user );
-            //echo $user->username;
-            //echo "<br>";
+            $user = new User();
 
-            //$users = User::find_all_users();
-            //foreach($users as $user) {
-                //echo $user->id . "<br>";
-            //}
-       
+            /*Data suppose to be comming from a form */
+            $user->username = "Suave The second";
+            $user->password = "Rico Last Name";
+            $user->first_name = "Rico";
+            $user->last_name = "Suaves";
 
-            $found_user = User::find_users_by_id(2);
-           echo $found_user->username;
+            $user->create();
+
 
         ?>
 

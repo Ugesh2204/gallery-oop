@@ -117,7 +117,44 @@ class User {
 
      }
 
-}
+
+    /*Create Method */
+
+    public function create() {
+        global $database;
+
+        $sql = "INSERT INTO users (username, password, first_name, last_name)";
+        /*concatonate string .= */
+        $sql .= "VALUES ('";
+        $sql .= $database->escape_string($this->username) ."', '";
+        $sql .= $database->escape_string($this->password) ."', '";
+        $sql .= $database->escape_string($this->first_name) ."', '";
+        $sql .= $database->escape_string($this->last_name) ."')";
+
+
+        /*send that query  */
+        if($database->query($sql)) {
+
+            /*the_insert method will be repomsible to pull that id from laste query */
+            $this->id = $database->the_insert_id();
+
+            return true;
+
+        } else {
+            return false;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+}//End of user class
 
 
 /*Hi @Orfeas, well yes, by using $database  we are accessing that variable within methods/functions. 
