@@ -19,10 +19,13 @@
 
             $user->create();*/
 
-            $user = User::find_users_by_id(3);
-            $user->last_name = "Williams";
+           // $user = User::find_users_by_id(3);
+            //$user->last_name = "Williams";
+            //$user->update();
 
-            $user->update();
+
+            $user = User::find_users_by_id(3);
+            $user->delete();
 
 
         ?>

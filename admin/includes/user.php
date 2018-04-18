@@ -168,6 +168,23 @@ class User {
     }
 
 
+    /*Delete */
+
+    public function delete() {
+        global $database;
+
+        $sql = "DELETE FROM users ";
+        $sql .= "WHERE ID=" . $database->escape_string($this->id);
+        /*Attention leave a space before limit concatonating rules */
+        $sql .= " LIMIT 1";
+
+        $database->query($sql);
+
+          /*Tenary operation */
+          return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+
+    }
+
 
 
 
