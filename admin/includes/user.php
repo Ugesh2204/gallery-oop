@@ -2,8 +2,7 @@
 
 class User {
 
-    /*step 3 returnin and object not an array*/
-
+    protected static $db_table = "users";// making it universal to use in another tbale 
     public $id;
     public $username;
     public $password;
@@ -131,7 +130,7 @@ class User {
     public function create() {
         global $database;
 
-        $sql = "INSERT INTO users (username, password, first_name, last_name)";
+        $sql = "INSERT INTO " .self::$db_table. " (username, password, first_name, last_name)";
         /*concatonate string .= */
         $sql .= "VALUES ('";
         $sql .= $database->escape_string($this->username) ."', '";
@@ -159,7 +158,7 @@ class User {
     public function update() {
         global $database;
 
-        $sql = "UPDATE users SET ";
+        $sql = "UPDATE " .self::$db_table. " SET ";
         $sql .= "username= '" . $database->escape_string($this->username)    . "', ";
         $sql .= "password= '" . $database->escape_string($this->password)    . "', ";
         $sql .= "first_name= '" . $database->escape_string($this->first_name). "', ";
@@ -181,7 +180,7 @@ class User {
     public function delete() {
         global $database;
 
-        $sql = "DELETE FROM users ";
+        $sql = "DELETE FROM " .self::$db_table. "  ";
         $sql .= "WHERE ID=" . $database->escape_string($this->id);
         /*Attention leave a space before limit concatonating rules */
         $sql .= " LIMIT 1";

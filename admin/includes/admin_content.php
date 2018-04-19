@@ -19,11 +19,12 @@
 
             $user->create();*/
 
-           // $user = User::find_users_by_id(3);
-            //$user->last_name = "Williams";
-            //$user->update();
+            /*Update */
+           $user = User::find_users_by_id(7);
+            $user->last_name = "Roopchand";
+            $user->save();
 
-            //$user = User::find_users_by_id(3);
+            //$user = User::find_users_by_id(4);
             //$user->delete();
 
             /*update user */
@@ -33,7 +34,7 @@
 
             /*Create user */
             //$user = new User();
-            //$user->username = "WHATEVER_2000";
+            //$user->username = "ugesh";
             //$user->save();
 
         ?>
