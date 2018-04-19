@@ -138,6 +138,23 @@ class User {
      }
 
 
+     /**escaping string */
+
+     protected function clean_properties() {
+
+        global $database;
+
+        $clean_properties = array();
+
+        foreach ($this->properties() as $key => $value) {
+            $clean_properties[$key] = $database->escape_string($value);
+        }
+
+        return $clean_properties;
+
+     }
+
+
      /**Abstrating the create method */
 
      public function save() {
@@ -151,7 +168,7 @@ class User {
     public function create() {
         global $database;
         /*Assocaitive array abstrating properties */
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
 
         $sql = "INSERT INTO " .self::$db_table. "(" . implode(",", array_keys($properties)). ")";
         /*concatonate string .= */
@@ -178,7 +195,7 @@ class User {
     public function update() {
         global $database;
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
 
         $properties_pairs = array();
 
