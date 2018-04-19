@@ -118,6 +118,14 @@ class User {
      }
 
 
+     /**Abstrating the create method */
+
+     public function save() {
+
+        return  isset($this->id) ? $this->update() : $this->create();
+     }
+
+
     /*Create Method */
 
     public function create() {

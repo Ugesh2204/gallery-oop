@@ -23,10 +23,18 @@
             //$user->last_name = "Williams";
             //$user->update();
 
+            //$user = User::find_users_by_id(3);
+            //$user->delete();
 
-            $user = User::find_users_by_id(3);
-            $user->delete();
+            /*update user */
+           /* $user = User::find_users_by_id(6);
+            $user->password = "justpassword";
+            $user->save();*/
 
+            /*Create user */
+            //$user = new User();
+            //$user->username = "WHATEVER_2000";
+            //$user->save();
 
         ?>
 
