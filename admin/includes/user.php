@@ -3,6 +3,7 @@
 class User {
 
     protected static $db_table = "users";// making it universal to use in another tbale 
+    protected static $db_table_fields = array('username','password', 'first_name','last_name');
     public $id;
     public $username;
     public $password;
@@ -116,6 +117,26 @@ class User {
 
      }
 
+     protected function properties() {
+
+        /*get object vars to get the properties keys values */
+         //return get_object_vars($this);
+
+         $properties = array();
+
+         foreach (self::$db_table_fields as $db_field) {
+
+            /*quick check if the property exist */
+
+            if(property_exists($this, $db_field)){
+                /*$db_field is not an object property */
+                $properties[$db_field] = $this->$db_field;
+            }
+         }
+
+         return $properties;
+     }
+
 
      /**Abstrating the create method */
 
@@ -129,14 +150,13 @@ class User {
 
     public function create() {
         global $database;
+        /*Assocaitive array abstrating properties */
+        $properties = $this->properties();
 
-        $sql = "INSERT INTO " .self::$db_table. " (username, password, first_name, last_name)";
+        $sql = "INSERT INTO " .self::$db_table. "(" . implode(",", array_keys($properties)). ")";
         /*concatonate string .= */
-        $sql .= "VALUES ('";
-        $sql .= $database->escape_string($this->username) ."', '";
-        $sql .= $database->escape_string($this->password) ."', '";
-        $sql .= $database->escape_string($this->first_name) ."', '";
-        $sql .= $database->escape_string($this->last_name) ."')";
+        $sql .= "VALUES ('". implode("','", array_values($properties)) ."')";
+       
 
 
         /*send that query  */
