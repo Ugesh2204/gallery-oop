@@ -110,7 +110,7 @@ class Db_object {
 
     /*Create Method */
 
-    public function create() {
+	public function create() {
 		global $database;
 
 		$properties = $this->clean_properties();
@@ -132,7 +132,10 @@ class Db_object {
 
 		}
 
-	} // Create Method
+	
+
+
+	}  // Create Method
 
     /*UPdate */
 
@@ -150,7 +153,7 @@ class Db_object {
 
         $sql = "UPDATE " .static::$db_table. " SET ";
         $sql .=  implode(", ", $properties_pairs);
-        $sql .= " WHERE id= " .$database->escape_string($this->id);
+        $sql .= " WHERE id= " . $database->escape_string($this->id);
 
         /*send query to database */
 

@@ -3,7 +3,7 @@
 class Photo extends Db_object {
 
     protected static $db_table = "photos";
-    //protected static $db_table_fields = array('photo_id','title','description','filename','type','size');
+    
     protected static $db_table_fields = array('id','title','description','filename','type','size' );
  
     public $photo_id;
@@ -31,20 +31,66 @@ class Photo extends Db_object {
 
 
     //This is pass file superglobal $_FILES['upload_file'] as an argument
-    public function set_files($file) {
+    public function set_file($file) {
 
-        /* checking the file is empty or is not a file or an array */
         if(empty($file) || !$file || !is_array($file)) {
             $this->errors[] = "There was no file uploaded here";
             return false;
-        } elseif($file['error'] !=0) {
+    
+            }elseif($file['error'] !=0) {
+    
             $this->errors[] = $this->upload_errors_array[$file['error']];
-        } else {
-            /*cleaning up see basename */
-            $this->filename = basename($file['name']);
+            return false;
+    
+            } else {
+    
+    
+            $this->filename =  basename($file['name']);
             $this->tmp_path = $file['tmp_name'];
-            $this->tmp_path = $file['type'];
-            $this->tmp_path = $file['size'];
+            $this->type     = $file['type'];
+            $this->size     = $file['size'];
+    
+    
+            }
+
+    }
+
+
+    /*SAVE METHOD TO UPLOAD FILES */
+
+    public function save() {
+
+        /*ERRO checking */
+        if($this->id) {
+            $this->update();
+        } else {
+            if(!empty($this->errors)) {
+                return false;
+            }
+
+            if(empty($this->filename) || empty($this->tmp_path)) {
+                $this->errors[] = "the file was not available";
+                return false;
+            }
+
+
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+
+            if(file_exists($target_path)) {
+                $this->errors[] = "The file {$this->filename} already exists";
+                return false;
+            }
+
+            /*move_uploaded_file predifine function */
+            if(move_uploaded_file($this->tmp_path, $target_path)) {
+                if($this->create()) {
+                    unset($this->tmp_path);
+                    return true;
+                }
+            } else {
+                $this->errors[] = "the file directory does not have permission";
+                return false;
+            }
 
         }
 

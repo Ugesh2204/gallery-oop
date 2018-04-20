@@ -10,11 +10,11 @@
 
         <?php
 
-           /* $user = new User();
-            $user->username = "test";
-            $user->password = "test";
-            $user->first_name = "test";
-            $user->last_name = "test";
+            /*$user = new User();
+            $user->username = "111";
+            $user->password = "111";
+            $user->first_name = "111";
+            $user->last_name = "111";
             $user->create();*/
 
             /*Update */
@@ -58,12 +58,12 @@
 
             /*$photo = new Photo();
             $photo->title = "New photo";
-            $photo->size = "22";
+            $photo->size = "28";
             $photo->create();*/
 
             /*Testing Include path from init  */
 
-            echo INCLUDES_PATH;
+            /*echo INCLUDES_PATH;*/
 
         ?>
 
