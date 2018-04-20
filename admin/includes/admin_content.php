@@ -51,15 +51,19 @@
             }*/
 
 
-            $photo = new Photo();
+            /*$photo = new Photo();
             $photo->title = "New photo";
             $photo->size = "23";
-            $photo->create();
+            $photo->create();*/
 
             /*$photo = new Photo();
             $photo->title = "New photo";
             $photo->size = "22";
             $photo->create();*/
+
+            /*Testing Include path from init  */
+
+            echo INCLUDES_PATH;
 
         ?>
 
