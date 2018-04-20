@@ -10,33 +10,56 @@
 
         <?php
 
-            $user = new User();
-            $user->username = "student";
-            $user->password = "stu22";
-            $user->first_name = "Lisa";
-            $user->last_name = "Monacorona";
-            $user->create();
+           /* $user = new User();
+            $user->username = "test";
+            $user->password = "test";
+            $user->first_name = "test";
+            $user->last_name = "test";
+            $user->create();*/
 
             /*Update */
-           /*$user = User::find_users_by_id(8);
+           /*$user = User::find_by_id(8);
             $user->username = "David";
             $user->password = "david22";
             $user->first_name = "David";
             $user->last_name = "Beckham";
             $user->update();*/
 
-            //$user = User::find_users_by_id(4);
-            //$user->delete();
+            /*$user = User::find_by_id(25);
+            $user->delete();*/
 
             /*update user */
-           /* $user = User::find_users_by_id(6);
+           /* $user = User::find_by_id(6);
             $user->password = "justpassword";
             $user->save();*/
 
             /*Create user */
             //$user = new User();
-            //$user->username = "ugesh";
+            //$user->username = "Megaman";
             //$user->save();
+
+
+            /*$users = User::find_all();
+            foreach ($users as $user) {
+                echo $user->username;
+            }*/
+
+             
+            /*$photos = Photo::find_all();
+            foreach ($photos as $photo) {
+                echo $photo->title;
+            }*/
+
+
+            $photo = new Photo();
+            $photo->title = "New photo";
+            $photo->size = "23";
+            $photo->create();
+
+            /*$photo = new Photo();
+            $photo->title = "New photo";
+            $photo->size = "22";
+            $photo->create();*/
 
         ?>
 
