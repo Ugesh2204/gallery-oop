@@ -33,25 +33,7 @@ class User extends Db_object {
 
 
 
-     protected function properties() {
-
-        /*get object vars to get the properties keys values */
-         //return get_object_vars($this);
-
-         $properties = array();
-
-         foreach (self::$db_table_fields as $db_field) {
-
-            /*quick check if the property exist */
-
-            if(property_exists($this, $db_field)){
-                /*$db_field is not an object property */
-                $properties[$db_field] = $this->$db_field;
-            }
-         }
-
-         return $properties;
-     }
+ 
 
 
     

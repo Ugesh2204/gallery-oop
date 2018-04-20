@@ -15,6 +15,7 @@ class Photo extends Db_object {
 
     public $tmp_path;
     public $upload_directory = "images";
+    public $errors = array();
     public $upload_errors = array();
     /*We can debug our app when there is an error */
     public $upload_errors_array= array(
@@ -28,6 +29,26 @@ class Photo extends Db_object {
         UPLOAD_ERR_EXTENSION    => "A PHP extension stopped the file upload."		
     );
 
+
+    //This is pass file superglobal $_FILES['upload_file'] as an argument
+    public function set_files($file) {
+
+        /* checking the file is empty or is not a file or an array */
+        if(empty($file) || !$file || !is_array($file)) {
+            $this->errors[] = "There was no file uploaded here";
+            return false;
+        } elseif($file['error'] !=0) {
+            $this->errors[] = $this->upload_errors_array[$file['error']];
+        } else {
+            /*cleaning up see basename */
+            $this->filename = basename($file['name']);
+            $this->tmp_path = $file['tmp_name'];
+            $this->tmp_path = $file['type'];
+            $this->tmp_path = $file['size'];
+
+        }
+
+    }
 
 }
 
