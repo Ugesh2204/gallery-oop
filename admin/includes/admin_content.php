@@ -11,16 +11,16 @@
         <?php
 
             /*$user = new User();
-            $user->username = "111";
-            $user->password = "111";
-            $user->first_name = "111";
-            $user->last_name = "111";
+            $user->username = "22";
+            $user->password = "22";
+            $user->first_name = "22";
+            $user->last_name = "22";
             $user->create();*/
 
             /*Update */
-           /*$user = User::find_by_id(8);
-            $user->username = "David";
-            $user->password = "david22";
+           /*$user = User::find_by_id(39);
+            $user->username = "33";
+            $user->password = "33";
             $user->first_name = "David";
             $user->last_name = "Beckham";
             $user->update();*/
@@ -39,7 +39,7 @@
             //$user->save();
 
 
-            /*$users = User::find_all();
+           /* $users = User::find_all();
             foreach ($users as $user) {
                 echo $user->username;
             }*/

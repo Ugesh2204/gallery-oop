@@ -3,10 +3,9 @@
 class Photo extends Db_object {
 
     protected static $db_table = "photos";
-    
-    protected static $db_table_fields = array('id','title','description','filename','type','size' );
- 
-    public $photo_id;
+    protected static $db_table_fields = array('title','description','filename','type','size' );
+    //public $photo_id;
+    public $id;
     public $title;
     public $description;
     public $filename;
@@ -104,7 +103,29 @@ class Photo extends Db_object {
 
     }
 
-}
+    //Delete the data from database and delete it form the sever istself
+
+    public function delete_photo() {
+
+
+        if($this->delete()) {
+
+            $target_path = SITE_ROOT.DS. 'admin' . DS . $this->picture_path();
+
+            /*predefine function in php unlink */
+
+            return unlink($target_path) ? true : false;
+
+        } else {
+            return false;
+        }
+
+    }
+
+
+
+
+}//end class
 
 
 ?>

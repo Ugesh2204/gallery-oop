@@ -6,9 +6,6 @@
 
 <?php
 /*code responsible for moving our file to the database */
-
-
-
 $message = "";
 
 if(isset($_POST['submit'])) {
@@ -65,7 +62,7 @@ if(isset($_POST['submit'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="file" name="file_upload"  >
+                                        <input type="file" name="file_upload">
                                     </div>
 
                                 <input type="submit" name="submit" value="save">
