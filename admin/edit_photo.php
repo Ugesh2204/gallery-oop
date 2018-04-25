@@ -19,6 +19,9 @@ if(empty($_GET['id'])) {
             $photo->alternate_text = $_POST['alternate_text'];
             $photo->description = $_POST['description'];
 
+
+            $photo->save();
+
         }
     
     }
@@ -59,7 +62,7 @@ if(empty($_GET['id'])) {
                             <small>Subheading</small>
                         </h1>
                          <!--Edit photos -->
-                        <form action="edit_photo.php" method="post">
+                        <form action="" method="post">
                             <div class="col-md-8">
 
                                 <div class="form-group">
@@ -73,7 +76,7 @@ if(empty($_GET['id'])) {
 
                                 <div class="form-group">
                                     <label for="caption">Alternate Text</label>
-                                    <input type="alternate_text" name="title" class="form-control" value="<?php echo $photo->alternate_text; ?>">
+                                    <input type="alternate_text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
                                 </div>
 
                                 <div class="form-group">
