@@ -50,7 +50,7 @@ $photos = Photo::find_all();
                                 <?php foreach($photos as $photo): ?>
 
                                     <tr>
-                                        <td><img src="<?php echo $photo->picture_path(); ?>" alt="">
+                                        <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
 
                                             <div class="pictures_link">
 
