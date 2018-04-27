@@ -4,21 +4,16 @@
 <?php
 
 
-    //$user = user::find_by_id($_GET['id']);
+    $user = new User();
     if(isset($_POST['create'])) {
 
-        echo "its working ";
-        /*Pulling out information */
-        //if($user) {
-           // $user->title = $_POST['title'];
-            //$user->caption = $_POST['caption'];
-            //$user->alternate_text = $_POST['alternate_text'];
-            //$user->description = $_POST['description'];
+        if($user) {
+            echo $user->username = $_POST ['username'];
+            $user->first_name = $_POST ['first_name'];
+            $user->last_name = $_POST ['last_name'];
+            $user->password = $_POST ['password'];  
+        }
 
-            //$user->save();
-
-        //}
-    
     }
 
 
@@ -55,14 +50,19 @@
                             <div class="col-md-6 col-md-offset-3">
 
                                 <div class="form-group">
+                                <input type="file" name="user_image">
+                                </div>
+                                
+
+                                <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" name="title" class="form-control">
+                                    <input type="text" name="username" class="form-control">
                                 </div>
 
                                 
                                 <div class="form-group">
                                     <label for="first name">First Name</label>
-                                    <input type="text" name="first-name" class="form-control">
+                                    <input type="text" name="first_name" class="form-control">
                                 </div>
 
                                 <div class="form-group">
