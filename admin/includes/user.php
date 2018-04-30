@@ -14,41 +14,13 @@ class User extends Db_object {
     public $image_placeholder = "http://placehold.it/400x400&text=image";
 
 
-     //This is pass file superglobal $_FILES['upload_file'] as an argument
-     public function set_file($file) {
-
-        if(empty($file) || !$file || !is_array($file)) {
-            $this->errors[] = "There was no file uploaded here";
-            return false;
-    
-            }elseif($file['error'] !=0) {
-    
-            $this->errors[] = $this->upload_errors_array[$file['error']];
-            return false;
-    
-            } else {
-    
-    
-            $this->user_image =  basename($file['name']);
-            $this->tmp_path = $file['tmp_name'];
-            $this->type     = $file['type'];
-            $this->size     = $file['size'];
-    
-    
-            }
-
-    }
-
 
 
     /*SAVE METHOD TO UPLOAD FILES */
 
     public function save_user_and_image() {
 
-        /*ERRO checking */
-        if($this->id) {
-            $this->update();
-        } else {
+        
             if(!empty($this->errors)) {
                 return false;
             }
@@ -77,7 +49,7 @@ class User extends Db_object {
                 return false;
             }
 
-        }
+        
 
     }
 
