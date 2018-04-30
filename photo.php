@@ -2,6 +2,12 @@
 
 require_once("admin/includes/init.php");
 
+/*check if empty */
+
+if(empty($_GET['id'])) {
+    redirect("index.php");
+}
+
 $photo = Photo::find_by_id($_GET['id']);
 
 echo $photo->title;
