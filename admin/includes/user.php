@@ -18,7 +18,7 @@ class User extends Db_object {
 
     /*SAVE METHOD TO UPLOAD FILES */
 
-    public function save_user_and_image() {
+    public function upload_photo() {
 
         
             if(!empty($this->errors)) {
@@ -40,10 +40,10 @@ class User extends Db_object {
 
             /*move_uploaded_file predifine function */
             if(move_uploaded_file($this->tmp_path, $target_path)) {
-                if($this->create()) {
+               
                     unset($this->tmp_path);
                     return true;
-                }
+                
             } else {
                 $this->errors[] = "the file directory does not have permission";
                 return false;
