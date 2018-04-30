@@ -1,7 +1,15 @@
 <?php
 
+require_once("admin/includes/init.php");
+
+$photo = Photo::find_by_id($_GET['id']);
+
+echo $photo->title;
+
+
+
 if(isset($_POST['submit'])) {
-    
+
     echo "Hello";
 }
 
@@ -122,13 +130,14 @@ if(isset($_POST['submit'])) {
                 <div class="well">
                     <h4>Leave a Comment:</h4>
                     <form role="form" method="post">
-
+                        
                         <div class="form-group">
-                            <input type="text" name="author">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control" name="author">
                         </div>
 
                         <div class="form-group">
-                            <textarea class="body" rows="3"></textarea>
+                            <textarea class="body" class="form-control" rows="3"></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>
