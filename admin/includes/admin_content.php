@@ -8,73 +8,109 @@
             <small>Subheading</small>
         </h1>
 
-        <?php
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-users fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">4</div>
+                                <div>New Views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                               
+                            <span class="pull-left">View Details</span> 
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span> 
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-            /*$user = new User();
-            $user->username = "22";
-            $user->password = "22";
-            $user->first_name = "22";
-            $user->last_name = "22";
-            $user->create();*/
-
-            /*Update */
-           /*$user = User::find_by_id(39);
-            $user->username = "33";
-            $user->password = "33";
-            $user->first_name = "David";
-            $user->last_name = "Beckham";
-            $user->update();*/
-
-            /*$user = User::find_by_id(25);
-            $user->delete();*/
-
-            /*update user */
-           /* $user = User::find_by_id(6);
-            $user->password = "justpassword";
-            $user->save();*/
-
-            /*Create user */
-            //$user = new User();
-            //$user->username = "Megaman";
-            //$user->save();
+                <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-photo fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">7</div>
+                                <div>Photos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Photos in Gallery</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
 
-           /* $users = User::find_all();
-            foreach ($users as $user) {
-                echo $user->username;
-            }*/
+                <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-user fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">8
 
-             
-            /*$photos = Photo::find_all();
-            foreach ($photos as $photo) {
-                echo $photo->title;
-            }*/
+                                </div>
+
+                                <div>Users</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Users</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+                <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-support fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">8</div>
+                                <div>Comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Comments</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
 
-            /*$photo = new Photo();
-            $photo->title = "New photo";
-            $photo->size = "23";
-            $photo->create();*/
+        </div> <!--First Row-->
 
-            /*$photo = new Photo();
-            $photo->title = "New photo";
-            $photo->size = "28";
-            $photo->create();*/
+ 
 
-            /*Testing Include path from init  */
-
-            /*echo INCLUDES_PATH;*/
-
-        ?>
-
-        <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-            </li>
-            <li class="active">
-                <i class="fa fa-file"></i> Blank Page
-            </li>
-        </ol>
     </div>
 </div>
 <!-- /.row -->
