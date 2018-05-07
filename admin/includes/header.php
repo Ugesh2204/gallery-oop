@@ -18,6 +18,9 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <!-- Google Api chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
