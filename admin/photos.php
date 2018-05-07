@@ -78,9 +78,7 @@ $photos = Photo::find_all();
 
 
                                              echo count($comments);
-                                          
-
-                                        //}
+                                        
                                         ?>
 
                                         </a>
