@@ -5,7 +5,7 @@ defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 /*  /c/wamp64/www/gallery  */
 /*online path  define('SITE_ROOT', __DIR__ . DS . '..' . DS . '..' ); */
 
-define('SITE_ROOT', 'c:' . DS . 'wamp64' . DS . 'www' . DS . 'gallery' );
+define('SITE_ROOT', 'c:' . DS . 'xampp' . DS . 'htdocs' . DS . 'gallery' );
 
 defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'admin'.DS.'includes');
 

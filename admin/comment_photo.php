@@ -53,7 +53,7 @@ $comments = Comment::find_the_comments($_GET['id']);
                                 <?php foreach($comments as $comment): ?>
 
                                     <tr>
-                                        <td><?php echo $comment->photo_id; ?></td>
+                                        <td><?php echo $comment->id; ?></td>
                                        
                                         
                                         <td><?php echo $comment->author; ?>
